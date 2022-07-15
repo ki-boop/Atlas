@@ -1,0 +1,28 @@
+.Product{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  .str{
+    text-align: left;
+
+  }
+  img{
+    width: 100%;
+  }
+  .productProperty{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+
+  }
+
+
+}
+.makeOrder{
+  margin-top: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}

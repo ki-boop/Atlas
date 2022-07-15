@@ -1,0 +1,57 @@
+.InputNumber{
+  display: flex;
+  position: relative;
+  width: 100px;
+}
+.inputCountItems{
+  cursor: default;
+  display: block;
+  height: 32px;
+  line-height: 32px;
+  font-size: 20px;
+  width: 99px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  appearance: textfield;
+
+
+  &:active,&:hover, &:focus{
+    outline: 0;
+    outline-offset: 0;
+  }
+
+}
+.btn{
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  width: 20px;
+  padding: 0;
+  display: block;
+  text-align: center;
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  transition: all 300ms ease;
+  background: rgba(111,124,235,255);
+
+  &:hover{
+    cursor: pointer;
+  }
+
+}
+.btn-plus{right: 1px;
+  &:active{
+    box-shadow: 3px 0px 3px rgba(111,124,235,255);
+  }}
+.btn-min{left: 1px;
+  &:active{
+    box-shadow: -3px 0px 3px rgba(111,124,235,255);
+
+  }
+}

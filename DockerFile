@@ -1,0 +1,19 @@
+FROM node:alpine as build
+COPY src/Docker /usr/share/nginx/html
+
+#also day /usr/
+WORKDIR /app
+
+COPY src/Docker /app/
+
+RUN npm install --silent
+RUN npm install --react-scrips@3.0.1 -g --silent
+
+RUN npm run build
+FROM nginx:1.16.0-alpine
+COPY --from=build /app/build /usr/share/nginx/html
+RUN rm /ect/nginx/conf.d/default.conf
+COPY src/Docker/nginx/nginx.conf /etc/nginx/conf.d
+
+EXPOSE 80
+CMD["nginx","-g","daemon off"]
