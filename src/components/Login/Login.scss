@@ -7,3 +7,95 @@
 .Login >div{
   margin-top: 100px;
 }
+.login-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 60px  40px 40px;
+  transform: translate(-50%, -50%);
+  background: rgb(255, 170, 32);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.2);
+  border-radius: 10px;
+
+}
+
+
+.login-box .user-box {
+  position: relative;
+
+}
+
+.login-box .user-box input {
+  width: 100%;
+  padding: 2px;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 50px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+.login-box .user-box label {
+  position: absolute;
+  top:0;
+  left: 5px;
+  padding: -10px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.login-box .user-box input:focus ~label,
+.login-box .user-box input:valid  , .focused ~label{
+  top: -20px !important;
+  left: 0px !important;
+  font-size: 16px !important;
+}
+.Button{
+  display: block;
+  width: 150px;
+  font-size: 25px;
+  text-decoration: none;
+  transition: all 200ms ease-out;
+  &:hover{
+    box-shadow: rgb(0 0 0 / 25%) 0px 2px 2px 0px;
+  }
+}
+.auth-btn{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+    > div{
+      border-radius: 5px !important;
+    }
+  a{
+    text-decoration: none;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

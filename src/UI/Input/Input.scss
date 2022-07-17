@@ -3,7 +3,6 @@
 
 }
 .Input label{
-  margin-bottom: 3px;
   padding: 0;
   display: block;
   font-weight: bold;
@@ -24,6 +23,8 @@
   color: #f01f30;
   font-size: 12px;
   font-weight: bold;
+  position: absolute;
+  top: 30px;
 }
 .Input.invalid{
   color: #f01f30;
