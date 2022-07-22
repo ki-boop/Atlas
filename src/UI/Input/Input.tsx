@@ -8,7 +8,6 @@ function isInvalid ({valid, touched, shouldValidate}:any){
 export const Input=(props:any)=>{
     const inputType = props.type || 'text'
     const cls = ['Input']
-    console.log(props.value.length)
     const htmlFor =`${inputType}-${12}`
     if(isInvalid(props)) cls.push('invalid');
     return(

@@ -1,19 +1,39 @@
-FROM node:alpine as build
-COPY src/Docker /usr/share/nginx/html
+# FROM node:latest
+# RUN mkdir -p /
+# WORKDIR /src
+# # EXPOSE 3000
+# COPY   ["./package.json","/src"]
+# COPY ./. /src/.
+# RUN npm install
+# #RUN npm run build
+# ENTRYPOINT npm start
+# FROM nginx:alpine
+# WORKDIR /usr/share/nginx/html
+# RUN rm -rf ./*
+# COPY --from=builder /app/build .
+# ENTRYPOINT ["nginx", "-g", "daemon off;"]
+# # COPY --from=build ./build /usr/share/nginx/html
+# # RUN rm /ect/nginx/conf.d/default.conf
+# # COPY src/Docker/nginx/nginx.conf /etc/nginx/conf.d
 
-#also day /usr/
+# EXPOSE 80
+# Name the node stage "builder"
+FROM node:16 AS builder
+# Set working directory
 WORKDIR /app
+# Copy all files from current directory to working dir in image
+COPY . .
+# install node modules and build assets
+RUN yarn install && yarn build
 
-COPY src/Docker /app/
+# nginx state for serving content
+FROM nginx:alpine
+# Set working directory to nginx asset directory-
+WORKDIR /usr/share/nginx/html
+# Remove default nginx static assets
+RUN rm -rf ./*
+# Copy static assets from builder stage
+COPY --from=builder /app/build .
+# Containers run nginx with global directives and daemon off
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
 
-RUN npm install --silent
-RUN npm install --react-scrips@3.0.1 -g --silent
-
-RUN npm run build
-FROM nginx:1.16.0-alpine
-COPY --from=build /app/build /usr/share/nginx/html
-RUN rm /ect/nginx/conf.d/default.conf
-COPY src/Docker/nginx/nginx.conf /etc/nginx/conf.d
-
-EXPOSE 80
-CMD["nginx","-g","daemon off"]

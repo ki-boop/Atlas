@@ -1,16 +1,29 @@
 import React from 'react';
-import Header from "./components/Header/Header";
-import { Link} from 'react-router-dom';
 import './App.css';
-import ProductList from "./components/ProductList/ProductList";
 import Main from "./Main";
+import {UserProvider} from "./Context/UserContext/UserContext";
+import {CartProvider} from "./Context/UserContext/CartContext";
+import {CountItemProvider} from "./Context/UserContext/CountItemContext";
+import {ProductsProvider} from "./Context/ProductsContext";
+import {OrderProvider} from "./Context/OrderContext";
 
 function App() {
 
 
   return (
+
       <React.Fragment>
-          <Main/>
+          <ProductsProvider>
+              <UserProvider>
+                  <CartProvider>
+                      <CountItemProvider>
+                          <OrderProvider>
+                              <Main/>
+                          </OrderProvider>
+                      </CountItemProvider>
+                  </CartProvider>
+              </UserProvider>
+          </ProductsProvider>
       </React.Fragment>
 
 

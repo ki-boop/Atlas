@@ -1,9 +1,9 @@
 .Button{
   box-sizing: border-box;
-  background: rgba(111,124,235,255);
+  background: var(--button-background);
   font-size: 18px;
   border: 0px;
-  color: #fff;
+  color: var( --button-text-color);
   width: 120px;
   border-radius: 5px;
   &:hover{

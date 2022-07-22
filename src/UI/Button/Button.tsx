@@ -1,12 +1,13 @@
-import React, {DetailedReactHTMLElement} from "react";
+import React from "react";
 import './Button.scss'
 interface Button{
-    children: string
+    children: any,
+    onClick: any
 }
 export  const Button = (props:Button) =>{
 
     let cls = ['btn']
     return(
-        <button className={'Button'}>{props.children}</button>
+        <button onClick={props.onClick} className={'Button'}>{props.children}</button>
     )
 }

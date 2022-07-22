@@ -11,3 +11,107 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/*dark theme*/
+/*light theme*/
+html[data-theme='light']{
+  transition: background 600ms ease;
+  --login-background: rgb(255, 170, 32);
+  --login-box-shadow: 0 15px 25px rgba(0,0,0,.2);
+  --login-input-text-color: #fff;
+  --login-index-border-bottom: 1px solid #fff;
+  --login-label-text-color: #fff;
+  --login--button-hover-box-shadow: rgb(0 0 0 / 25%) 0px 2px 2px 0px;
+
+  --cart-list-border-bottom: 2px solid #eee;
+  --cart-list-text-color: rgb(75, 91, 230);
+
+  --price-background: rgba(111,124,235,255);
+  --price-color: white;
+
+  --account-conteiner-box-shadow: 0 0 5px 5px #eee;
+  --account-border-bottom: 2px solid rgba(255,209,91);
+
+  --admin-path-fill: #fff;
+
+  --button-background: rgba(111,124,235,255);
+  --button-text-color: #fff;
+
+  --input-border: 1px solid #bebebe;
+  --input-span-text-color: #f01f30;
+
+  --product-input-number-btn-text-color: #fff;
+  --product-input-number-btn-background: rgba(111,124,235,255);
+  --product-input-number-btn-plus-active: 3px 0px 3px rgba(111,124,235,255);
+  --product-input-number-btn-min-active: -3px 0px 3px rgba(111,124,235,255);
+
+  --field-border: 5px solid #eee;
+  --field-label-background: rgb(111, 124, 235);
+  --field-label-text-color: #fff;
+  --field-input-border: 1px solid rgb(111, 124, 235);
+
+  --order-list-border: 5px solid #eee;
+  --order-list-items-border: 2px solid #eee;
+  --greeting-background: rgb(255, 170, 32, .6);
+
+  --header-box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  --header-link-color: #000;
+  --header-link-after-background: rgba(255,209,91);
+  --moon-filter:brightness(0);
+}
+html[data-theme='dark']{
+  background: #000;
+  transition: background 400ms ease;
+  --login-background: rgb(255, 170, 32);
+  --login-box-shadow: 0 15px 25px rgba(0,0,0,.2);
+  --login-input-text-color: #fff;
+  --login-index-border-bottom: 1px solid #fff;
+  --login-label-text-color: #fff;
+  --login--button-hover-box-shadow: rgb(0 0 0 / 25%) 0px 2px 2px 0px;
+
+  --cart-list-border-bottom: 2px solid #eee;
+  --cart-list-text-color: rgb(75, 91, 230);
+  --cart-list-h1-text-color: #fff;
+
+
+  --price-background: rgba(111,124,235,255);
+  --price-color: white;
+
+  --account-conteiner-box-shadow: 0 0 5px 5px #eee;
+  --account-border-bottom: 2px solid rgba(255,209,91);
+
+  --admin-path-fill: #fff;
+
+  --button-background: rgba(111,124,235,255);
+  --button-text-color: #fff;
+
+  --input-border: 1px solid #bebebe;
+  --input-span-text-color: #f01f30;
+
+  --product-input-number-btn-text-color: #fff;
+  --product-str-color: #fff;
+  --product-input-inputCountItems-color: #fff;
+  --product-input-inputCountItems-background:#171717;
+  --product-input-number-btn-background: rgba(111,124,235,255);
+  --product-input-number-btn-plus-active: 3px 0px 3px rgba(111,124,235,255);
+  --product-input-number-btn-min-active: -3px 0px 3px rgba(111,124,235,255);
+
+  --field-border: 5px solid #eee;
+  --field-label-background: rgb(111, 124, 235);
+  --field-label-text-color: #fff;
+  --field-input-border: 1px solid rgb(111, 124, 235);
+  --field-input-disabled-text-color: #b9b9b9;
+
+  --order-list-border: 5px solid #eee;
+  --order-list-items-border: 2px solid #eee;
+  --greeting-background: rgb(255, 170, 32, .6);
+
+  --header-box-shadow: 0 2px 4px 0 rgba(255, 229, 94, 0.2);
+  --header-logo-color: #fff;
+  --header-link-color: #fff;
+  --header-link-after-background: rgba(255,209,91);
+  --header-background: #171717;
+
+  --sun-filter:brightness(0) invert(1) ;
+
+}

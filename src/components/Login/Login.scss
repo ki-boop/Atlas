@@ -3,10 +3,14 @@
   justify-content: center;
   width: 100%;
   box-sizing: border-box;
+  h1{
+    color: var(--cart-list-h1-text-color);
+    margin: 0;
+    margin-top: 5%;
+    padding: 0;
+  }
 }
-.Login >div{
-  margin-top: 100px;
-}
+
 .login-box {
   position: absolute;
   top: 50%;
@@ -14,9 +18,9 @@
   width: 400px;
   padding: 60px  40px 40px;
   transform: translate(-50%, -50%);
-  background: rgb(255, 170, 32);
+  background: var(--login-background);
   box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.2);
+  box-shadow: var(--login-box-shadow);
   border-radius: 10px;
 
 }
@@ -31,10 +35,10 @@
   width: 100%;
   padding: 2px;
   font-size: 16px;
-  color: #fff;
+  color: var(--login-input-text-color);
   margin-bottom: 50px;
   border: none;
-  border-bottom: 1px solid #fff;
+  border-bottom: var(--login-index-border-bottom);
   outline: none;
   background: transparent;
 }
@@ -44,7 +48,7 @@
   left: 5px;
   padding: -10px 0;
   font-size: 16px;
-  color: #fff;
+  color: var(--login-label-text-color);
   pointer-events: none;
   transition: .5s;
 }
@@ -62,7 +66,7 @@
   text-decoration: none;
   transition: all 200ms ease-out;
   &:hover{
-    box-shadow: rgb(0 0 0 / 25%) 0px 2px 2px 0px;
+    box-shadow: var(--login--button-hover-box-shadow)
   }
 }
 .auth-btn{

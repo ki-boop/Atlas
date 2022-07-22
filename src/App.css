@@ -1,38 +1,19 @@
-.App {
-  text-align: center;
+body::-webkit-scrollbar {
+  width: 7px;
+}
+.bogy{
+  transition: background-color 200ms linear;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body::-webkit-scrollbar-track {
+  background: #fff;        /* цвет зоны отслеживания */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(113, 124, 228);    /* цвет бегунка */
+  border-radius: 20px;       /* округлось бегунка */
+  /* отступ вокруг бегунка */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

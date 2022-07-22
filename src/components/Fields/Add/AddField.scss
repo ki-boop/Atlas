@@ -1,0 +1,94 @@
+
+.Field{
+display: flex;
+  padding: 30px;
+  border: var(--field-border);
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: center;
+
+  .forImage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .Button{
+      width: 250px;
+      margin-top: 10px;
+      font-size: 15px;
+    }
+    img{
+      width: 300px;
+    }
+  }
+  form{
+    display: flex;
+    width: 100%;
+  }
+  .specifications{
+    width: 100%;
+    h1{
+      margin: 0;
+    }
+
+    .inputs{
+      display: flex;
+      justify-content: space-around;
+
+      .col{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 250px;
+
+        .inputsTitle{
+          text-align: center;
+          font-family: Belleza;
+          font-weight: bold;
+          font-size: 30px;
+          color: var(--cart-list-h1-text-color);
+          transition: color 400ms ease;
+
+          }
+        .block-input{
+          width: 200px;
+          height: 100px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        .input-block{
+
+          display: flex;
+          justify-content: space-around;
+          label{
+            background: var(--field-label-background);
+            color: var(--cart-list-h1-text-color);
+            padding: 2px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+          }
+          input{
+            width: 165px;
+            border-radius: 5px;
+            border: var(--field-input-border);
+            &:active, &:focus{
+              outline: none;
+            }
+            &:disabled{
+              color: var(--field-input-disabled-text-color);
+            }
+
+          }
+        }
+      }
+
+
+    }
+  }
+
+}

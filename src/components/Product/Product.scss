@@ -4,8 +4,11 @@
   flex-direction: column;
   align-items: center;
   border-radius: 5px;
+  animation: manifestation 2s ease;
   .str{
     text-align: left;
+    color: var(--product-str-color);
+    transition: color 300ms ease;
 
   }
   img{
@@ -17,7 +20,10 @@
     flex-direction: column;
 
   }
-
+  .endMessage{
+    color:  var(--cart-list-h1-text-color);
+    transition: color 400ms ease;
+  }
 
 }
 .makeOrder{
@@ -25,4 +31,17 @@
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+@keyframes manifestation {
+  0%{
+    transform: translateY(100px);
+    opacity: 0;
+
+  }
+  100%{
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }

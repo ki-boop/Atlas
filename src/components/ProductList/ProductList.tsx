@@ -1,66 +1,45 @@
-import React, { useState} from "react";
+import React, {useEffect, useState} from "react";
 import Product from "../Product/Product";
 import './ProductList.scss'
+import LocalizedStrings from "react-localization";
+import {ProductsProvider, useAddProducts, useProducts} from "../../Context/ProductsContext";
+interface Product {
+    id:number,
+    count:number,
+    img:string[],
+    strings: Object
+}
+export const ProductList = () =>{
 
-const ProductList = () =>{
-
-    const [products, setProducts] = useState([
-        {
-            id:1,
-            type:'Школа',
-            name:'Pen',
-            count:10,
-            description:'Это Ручка',
-            price:100,
-            img:['../../../public/itemsImage/default.png']
-        },
-        {
-            id:2,
-            type:'Черчение',
-            name:'Карандаш',
-            count:0,
-            description:'Это Карандаш',
-            price:50,
-            img:['../../../public/itemsImage/default.png']
-        },
-        {
-            id:3,
-            type:'Черчение',
-            name:'Линейка',
-            count:100,
-            description:'Это линейка',
-            price:1000,
-            img:['../../../public/itemsImage/default.png']
-        }
-    ]);
+    const products = useProducts()
 
     const sortListProducts = ()=>{
         let tempState = products
         return tempState.sort((a, b) => b.count - a.count)
     }
 
-    {
-        console.log(sortListProducts())}
         return(
 
             <div className={'ProductList'}>
 
-                {products.map((product, index) => {
+
+                {sortListProducts().map((product, index) => {
                     return(<Product id={product.id}
-                                    type={product.type}
-                                    name={product.name}
+                                    type={product.strings.type}
+                                    name={product.strings.name}
                                     count={product.count}
-                                    description={product.description}
-                                    price={product.price}
+                                    description={product.strings.description}
+                                    price={product.strings.price}
                                     img={product.img[0]}
                                     key={index}/>);
                     }
                 )}
+
+
             </div>
             )
-
-
 }
 
 
-export default ProductList
+
+

@@ -1,0 +1,28 @@
+.selectId{
+  display: flex;
+  width: 250px;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  label{
+    font-family: Belleza;
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--cart-list-h1-text-color);
+
+
+  }
+  input{
+    width: 165px;
+    border-radius: 5px;
+    border: 1px solid rgb(111, 124, 235);
+    &:active, &:focus{
+      outline: none;
+    }
+  }
+}
+.not-found{
+  font-size: 35px;
+  font-weight: bold;
+  font-family: Belleza;
+  color: var(--cart-list-h1-text-color);
+}

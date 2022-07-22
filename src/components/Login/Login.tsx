@@ -5,10 +5,14 @@ import { validate } from 'email-validator';
 import {Input} from "../../UI/Input/Input";
 import {Button} from "../../UI/Button/Button";
 import {GmailAuth} from "../../UI/GmailAuth/GmailAuth";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import {} from 'react-router'
+import {useUserLogIn} from "../../Context/UserContext/UserContext";
+
 
 export const Login = ()=>{
-
+    const isLog = useUserLogIn();
+    const navigate = useNavigate();
     const [email, setEmail] = useState({
         value: '',
         type: 'email',
@@ -33,6 +37,12 @@ export const Login = ()=>{
             minLength: 6
         }
     })
+
+    useEffect(()=>{
+        if(isLog) navigate('/account')
+    })
+
+
 
     const [isFormValid,setIsFormValid] = useState(false)
 
@@ -106,7 +116,6 @@ export const Login = ()=>{
                 <React.Fragment key={'input-box'+index}>
                     <div className={'user-box'}>
                         <Input
-
                             type={control.type}
                             value={control.value}
                             valid={control.valid}
@@ -129,29 +138,25 @@ export const Login = ()=>{
             <Header/>
             <div className={'Login'}>
                 <div className={'formContainer'}>
-                    <div>Вход/Регистрация</div>
+                    <h1>Вход</h1>
                     <form onSubmit={(event)=>submitHandler}>
                         <div className={'login-box'}>
                             {renderInputs()}
                             <div className={'auth-btn'}>
                                 <Link to={'/'}>
-                                    <Button>Войти</Button>
+                                    <Button onClick={()=>1}>Войти</Button>
+                                </Link>
+                                <Link to={'/admin'}>
+                                    <Button onClick={()=>1}>Админ</Button>
                                 </Link>
                                 <Link to={'/'}>
 
                                 </Link>
                                 <GmailAuth/>
-
-
-
-
                             </div>
-
                         </div>
-
                     </form>
                 </div>
-
             </div>
         </React.Fragment>
 

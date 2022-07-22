@@ -17,6 +17,10 @@
   -moz-appearance: textfield;
   -webkit-appearance: textfield;
   appearance: textfield;
+  border: 0;
+  transition: background 500ms ease;
+  background: var( --product-input-inputCountItems-background);
+  color: var(--product-input-inputCountItems-color);
 
 
   &:active,&:hover, &:focus{
@@ -34,11 +38,11 @@
   display: block;
   text-align: center;
   border: none;
-  color: #fff;
+  color: var(--product-input-number-btn-text-color);
   font-size: 17px;
   font-weight: 600;
   transition: all 300ms ease;
-  background: rgba(111,124,235,255);
+  background: var(--product-input-number-btn-background);
 
   &:hover{
     cursor: pointer;
@@ -47,11 +51,11 @@
 }
 .btn-plus{right: 1px;
   &:active{
-    box-shadow: 3px 0px 3px rgba(111,124,235,255);
+    box-shadow:var(--product-input-number-btn-plus-active);
   }}
 .btn-min{left: 1px;
   &:active{
-    box-shadow: -3px 0px 3px rgba(111,124,235,255);
+    box-shadow: var( --product-input-number-btn-min-active);
 
   }
 }

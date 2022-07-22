@@ -1,24 +1,31 @@
-import React, {Component, useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import GmailClientId from "./GmailClientId";
 import jwtDecode from "jwt-decode";
-import {GoogleLogin} from  'react-google-login'
-import GoogleButton from 'react-google-button'
-import renderButton = google.accounts.id.renderButton;
 import {Link} from "react-router-dom";
-import {log} from "util";
-
+import {useNewUser} from "../../Context/UserContext/UserContext";
+interface UserData {
+    aud: string,
+    azp: string,
+    email: string,
+    email_verified: boolean,
+    exp: number,
+    family_name: string,
+    given_name: string,
+    iat: number,
+    iss: string,
+    jti: string,
+    name: string,
+    nbf: string,
+    picture: string,
+    sub: string
+}
 export const GmailAuth = () =>{
-    let user= {};
-
-
-
+    const user2 = useNewUser();
 
     const handleCallbackResponse = (response:any)=>{
-        console.log('code',jwtDecode(response.credential))
-        user = jwtDecode(response.credential)
-        console.log(user)
-        document.getElementById('g-btn')!.click()
-        ;
+        const user = jwtDecode(response.credential) as UserData;
+        user2({email:user.email, full_name:user.name, name:user.given_name,picture:user.picture, greeting:false, role:'user'});
+        document.getElementById('g-btn')!.click();
     }
     useEffect(()=>{
        google.accounts.id.initialize({
@@ -33,10 +40,11 @@ export const GmailAuth = () =>{
 
     },[])
 
-
-
     return <Link to={'/'} id={'g-btn'}></Link>
 
 
 
 }
+
+
+
