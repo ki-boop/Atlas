@@ -1,11 +1,15 @@
 import React from "react";
 import './Input.scss'
+import LocalizedStrings from "react-localization";
 
 function isInvalid ({valid, touched, shouldValidate}:any){
     return !valid && shouldValidate && touched
 }
 
+
 export const Input=(props:any)=>{
+    const labelText = props.label
+    const errorMessage = props.errorMessage
     const inputType = props.type || 'text'
     const cls = ['Input']
     const htmlFor =`${inputType}-${12}`
@@ -19,10 +23,10 @@ export const Input=(props:any)=>{
                 value={props.value}
                 onChange={props.onChange}
             />
-            <label htmlFor={htmlFor}>{props.label}</label>
+            <label htmlFor={htmlFor}>{labelText}</label>
             {
                 isInvalid(props)
-                    ? <span>{props.errorMessage || 'Введите верное значение'}</span>
+                    ? <span>{errorMessage}</span>
                     : null
             }
 

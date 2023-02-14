@@ -8,7 +8,7 @@ interface cartItem{
 }
 
 
-const cartContext = React.createContext([] as Array<cartItem> )
+const cartContext = React.createContext([] as Array<cartItem>)
 const addToCartContext = React.createContext((cartItem:cartItem)=>{})
 const DeleteFromCartContext = React.createContext((id:number)=>{})
 const ChangeCartContext = React.createContext((cartItem:cartItem)=>{})

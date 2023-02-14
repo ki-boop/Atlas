@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import './Header.scss';
 import logo from '../../assets/images/creative-idea.png';
 import carts from '../../assets/images/carts.png';
@@ -10,10 +10,13 @@ import LocalizedStrings from 'react-localization';
 import {useUser, useUserLogIn} from "../../Context/UserContext/UserContext";
 import {useAddProducts} from "../../Context/ProductsContext";
 import {useTheme} from "../../OwnHooks/useTheme";
+import {Button} from "../../UI/Button/Button";
+import ReactDOM from "react-dom/client";
 
 
 
 let strings = new LocalizedStrings({
+
     ru:{
         logo: 'Атлас',
         link0: 'Каталог',
@@ -34,11 +37,12 @@ let strings = new LocalizedStrings({
 
 
 const Header = () =>{
-    const {theme, setTheme} = useTheme()
+    const { setTheme} = useTheme()
     const isLog = useUserLogIn();
     useEffect(()=>{
         strings.setLanguage(navigator.language)
-    })
+        document.documentElement.setAttribute('language',navigator.language)
+    },)
 
     const isLogIn = () =>{
         if(isLog) return '/account'
@@ -51,7 +55,6 @@ const Header = () =>{
     const handleDarkThemeClick = () =>{
         setTheme('dark')
     }
-
 
 
     return(
@@ -85,6 +88,7 @@ const Header = () =>{
                 <div className={'moon'}>
                     <img onClick={handleDarkThemeClick} src={moon}/>
                 </div>
+
             </div>
 
 

@@ -13,17 +13,13 @@ export const ProductList = () =>{
 
     const products = useProducts()
 
-    const sortListProducts = ()=>{
-        let tempState = products
-        return tempState.sort((a, b) => b.count - a.count)
-    }
 
         return(
 
             <div className={'ProductList'}>
 
 
-                {sortListProducts().map((product, index) => {
+                {products.map((product, index) => {
                     return(<Product id={product.id}
                                     type={product.strings.type}
                                     name={product.strings.name}

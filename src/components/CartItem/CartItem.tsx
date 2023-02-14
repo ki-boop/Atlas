@@ -5,6 +5,7 @@ import {Price} from "../Price/Price";
 import {Button} from "../../UI/Button/Button";
 import {useCart, useChangeCart, useDeleteFromCart} from "../../Context/UserContext/CartContext";
 import {useChangeProducts, useProducts} from "../../Context/ProductsContext";
+import LocalizedStrings from "react-localization";
 
 interface cartItem{
     id: number,
@@ -12,6 +13,15 @@ interface cartItem{
     img:string[],
     strings:any
 }
+let strings = new LocalizedStrings({
+
+    ru:{
+        delete:'Удалить'
+    },
+    ar:{
+        delete:'حذف'
+    }
+})
 export const CartItem = (props:cartItem)=>{
     const deleteFromCart = useDeleteFromCart()
     const changeProduct = useChangeProducts()
@@ -43,28 +53,16 @@ export const CartItem = (props:cartItem)=>{
         })
         return 0;
     }
-    const changeCount = (count:number) =>{
-        changeCart({
-            id:props.id,
-            count: count,
-            img:props.img,
-            strings:{
-                type:props.strings.type,
-                name:props.strings.name,
-                description:props.strings.description,
-                price:props.strings.price
-            }
-        })
-    }
+
 
     return (
         <div className={'CartItem'}>
-            <div className={'col'}><Image name={'default.png'} alt={props.strings.name}/></div>
+            <div className={'col'}><Image name={props.img[0]} alt={props.strings.name}/></div>
             <div className={'col'}>{props.count}</div>
             <div className={'col'}>{props.strings.name}</div>
             <div className={'col'}><Price price={props.strings.price}/></div>
             <div className={'col'}>{props.strings.type}</div>
-            <div className={'col'}><Button onClick={deleteItem}>Удалить</Button></div>
+            <div className={'col'}><Button onClick={deleteItem}>{strings.delete}</Button></div>
         </div>
     )
 }

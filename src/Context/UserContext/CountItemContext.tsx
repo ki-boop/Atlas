@@ -11,7 +11,6 @@ export const useSetCountItem = () =>{
 }
 export const CountItemProvider = ({children}:any) =>{
     const [countItems, setCountItems] = useState(1);
-
     const setItems = (count:number) =>{
         setCountItems(count)
     }
@@ -20,7 +19,6 @@ export const CountItemProvider = ({children}:any) =>{
             <SetCountItemContext.Provider value={setItems}>
                 {children}
             </SetCountItemContext.Provider>
-
         </CountItemContext.Provider>
     )
 

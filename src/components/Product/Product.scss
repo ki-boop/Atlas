@@ -4,6 +4,7 @@
   flex-direction: column;
   align-items: center;
   border-radius: 5px;
+  padding: 10px;
   animation: manifestation 2s ease;
   .str{
     text-align: left;
@@ -12,7 +13,8 @@
 
   }
   img{
-    width: 100%;
+    width: 300px;
+    height: 300px;
   }
   .productProperty{
     width: 80%;

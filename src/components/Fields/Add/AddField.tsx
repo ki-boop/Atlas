@@ -3,8 +3,29 @@ import {Image} from "../../../UI/Image/Image";
 import './AddField.scss'
 import {Button} from "../../../UI/Button/Button";
 import {useAddProducts, useProducts} from "../../../Context/ProductsContext";
+import LocalizedStrings from "react-localization";
 
 export const AddField = ()=>{
+    let strings = new LocalizedStrings({
+        ru:{
+            specifications:'Характеристики',
+            name:'Название',
+            type:'Тип',
+            price:'Цена',
+            count:'Количество',
+            description:'Описание',
+            buttonText:'Добавить товар'
+        },
+        ar:{
+            specifications:'المواصفات',
+            name:'العنوان',
+            type:'النوع',
+            price:'السعر',
+            count:'الكمية',
+            description:'الوصف',
+            buttonText:'إضافة منتج'
+        }
+    })
     const productList = useProducts()
     let newProduct={
         id: productList.length+1,
@@ -74,17 +95,17 @@ export const AddField = ()=>{
                 <input className={'Button'} onChange={(event)=>{onImage(event)}} type={"file"} />
             </div>
             <div className={'specifications'}>
-                <h1>Характеристики</h1>
+                <h1>{strings.specifications}</h1>
                 <div className={'inputs'}>
                     <div className={'col'}>
                         <div className={'block-input'}>
-                            <div className={'inputsTitle'}>Название</div>
+                            <div className={'inputsTitle'}>{strings.name}</div>
                             <div className={'input-block'}><label>RU</label> <input onChange={(event)=>{onChangeNameRu(event)}} type={"text"} required/></div>
                             <div className={'input-block'}><label>AR</label> <input onChange={(event)=>{onChangeNameAR(event)}} type={"text"} required/></div>
                         </div>
 
                         <div className={'block-input'}>
-                            <div className={'inputsTitle'}>Тип</div>
+                            <div className={'inputsTitle'}>{strings.type}</div>
                             <div className={'input-block'}><label>RU</label> <input onChange={(event)=>{onChangeTypeRu(event)}} type={"text"} required/></div>
                             <div className={'input-block'}><label>AR</label> <input onChange={(event)=>{onChangeTypeAR(event)}} type={"text"} required/></div>
                         </div>
@@ -92,24 +113,24 @@ export const AddField = ()=>{
                     </div>
                     <div className={'col'}>
                         <div className={'block-input'}>
-                            <div className={'inputsTitle'}>Цена</div>
+                            <div className={'inputsTitle'}>{strings.price}</div>
                             <div className={'input-block'}><input onChange={(event)=>{onChangePrice(event)}} min={1} type={"number"} required/><span></span></div>
                         </div>
 
                         <div className={'block-input'}>
-                            <div className={'inputsTitle'}>Количество</div>
+                            <div className={'inputsTitle'}>{strings.count}</div>
                             <div className={'input-block'}><input  onChange={(event)=>{onChangeCount(event)}} min={1} type={"number"} required/><span></span></div>
                         </div>
 
                     </div>
                     <div className={'col'}>
                         <div className={'block-input'}>
-                            <div className={'inputsTitle'}>Описание</div>
+                            <div className={'inputsTitle'}>{strings.description}</div>
                             <div className={'input-block'}><label>RU</label> <input onChange={(event)=>{onDescriptionTypeRu(event)}} type={"text"} required/></div>
                             <div className={'input-block'}><label>AR</label> <input onChange={(event)=>{onDescriptionTypeAR(event)}} type={"text"} required/></div>
 
                         </div>
-                        <Button onClick={()=>1}>Добавить товар</Button>
+                        <Button onClick={()=>1}>{strings.buttonText}</Button>
                     </div>
                 </div>
             </div>

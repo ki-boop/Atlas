@@ -4,7 +4,30 @@ import {Image} from "../../../UI/Image/Image";
 import {Button} from "../../../UI/Button/Button";
 import './ChangeField.scss'
 import LocalizedStrings from "react-localization";
-
+let strings = new LocalizedStrings({
+    ru:{
+        label:'Введите Id',
+        notFound:'Такого товара еще нет',
+        specifications:'Характеристики',
+        name:'Название',
+        type:'Тип',
+        price:'Цена',
+        count:'Количество',
+        description:'Описание',
+        buttonText:'Изменить'
+    },
+    ar:{
+        label:'أدخل المعرف',
+        notFound:'لا يوجد مثل هذا المنتج حتى الآن',
+        specifications:'المواصفات',
+        name:'العنوان',
+        type:'النوع',
+        price:'السعر',
+        count:'الكمية',
+        description:'الوصف',
+        buttonText:'إضافة منتج'
+    }
+})
 export const ChangeField = ()=>{
     const productList = useProducts()
     const changeProduct = useChangeProducts();
@@ -97,7 +120,7 @@ export const ChangeField = ()=>{
     }
     return <div className={'Field'}>
         <div className={'selectId'}>
-            <label>Введите id:</label>
+            <label>{strings.label}</label>
             <input type={'number'} min={1} onChange={(event)=>{getProduct(event)}}/>
         </div>
         {has?   <form onSubmit={(event)=>sendForm(event)}>
@@ -106,11 +129,11 @@ export const ChangeField = ()=>{
                 <input className={'Button'} onChange={(event)=>{onImage(event)}} type={"file"} />
             </div>
             <div className={'specifications'}>
-                <h1>Характеристики</h1>
+                <h1>{strings.specifications}</h1>
                 <div className={'inputs'}>
                     <div className={'col'}>
                         <div className={'block-input'}>
-                            <div className={'inputsTitle'}>Название</div>
+                            <div className={'inputsTitle'}>{strings.name}</div>
                             {currentProduct.strings.getLanguage()==='ru'?
                                 <div className={'input-block'}><label>RU</label> <input onChange={(event)=>{onChangeNameRu(event)}} value={currentProduct.strings.name} type={"text"} required/></div>:
                                 <div className={'input-block'}><label>AR</label> <input onChange={(event)=>{onChangeNameAR(event)}} value={currentProduct.strings.name} type={"text"} required/></div>}
@@ -118,7 +141,7 @@ export const ChangeField = ()=>{
 
                         <div className={'block-input'}>
 
-                            <div className={'inputsTitle'}>Тип</div>
+                            <div className={'inputsTitle'}>{strings.type}</div>
                             {currentProduct.strings.getLanguage()==='ru'?
                                 <div className={'input-block'}><label>RU</label> <input onChange={(event)=>{onChangeTypeRu(event)}} type={"text"} value={currentProduct.strings.type} required/></div>
                                 :<div className={'input-block'}><label>AR</label> <input onChange={(event)=>{onChangeTypeAR(event)}} type={"text"} value={currentProduct.strings.type} required/></div>}
@@ -127,30 +150,30 @@ export const ChangeField = ()=>{
                     </div>
                     <div className={'col'}>
                         <div className={'block-input'}>
-                            <div className={'inputsTitle'}>Цена</div>
+                            <div className={'inputsTitle'}>{strings.price}</div>
                             <div className={'input-block'}><input onChange={(event)=>{onChangePrice(event)}} min={1} type={"number"} value={currentProduct.strings.price} required/><span></span></div>
                         </div>
 
                         <div className={'block-input'}>
-                            <div className={'inputsTitle'}>Количество</div>
+                            <div className={'inputsTitle'}>{strings.count}</div>
                             <div className={'input-block'}><input  onChange={(event)=>{onChangeCount(event)}} min={1} value={currentProduct.count} type={"number"} required/><span></span></div>
                         </div>
 
                     </div>
                     <div className={'col'}>
                         <div className={'block-input'}>
-                            <div className={'inputsTitle'}>Описание</div>
+                            <div className={'inputsTitle'}>{strings.description}</div>
                             { currentProduct.strings.getLanguage()==='ru'?
                                 <div className={'input-block'}><label>RU</label> <input onChange={(event)=>{onDescriptionTypeRu(event)}} value={currentProduct.strings.description} type={"text"} required/></div>
                                 :<div className={'input-block'}><label>AR</label> <input onChange={(event)=>{onDescriptionTypeAR(event)}} value={currentProduct.strings.description} type={"text"} required/></div>}
 
                         </div>
-                        <Button onClick={()=>1}>Изменить</Button>
+                        <Button onClick={()=>1}>{strings.buttonText}</Button>
                     </div>
                 </div>
             </div>
         </form>
-        :<div className={'not-found'}>Такого товара еще нет</div>}
+        :<div className={'not-found'}>{strings.notFound}</div>}
 
 
     </div>

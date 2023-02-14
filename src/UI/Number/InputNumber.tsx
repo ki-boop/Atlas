@@ -57,7 +57,5 @@ export const InputNumber = (props:InputNumber) =>{
             </div>
          {countItem===props.count?<div className={'endMessage'}>Этого товара больше нет на складе</div>: null}
         </React.Fragment>
-
-
     )
 }

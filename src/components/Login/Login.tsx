@@ -8,7 +8,28 @@ import {GmailAuth} from "../../UI/GmailAuth/GmailAuth";
 import {Link, useNavigate} from "react-router-dom";
 import {} from 'react-router'
 import {useUserLogIn} from "../../Context/UserContext/UserContext";
+import LocalizedStrings from "react-localization";
+let strings = new LocalizedStrings({
 
+    ru:{
+        title:'Вход',
+        enterButton: 'Войти',
+        admin:'Админ',
+        email:'email',
+        emailErrorMessage:'Введите корректный email',
+        password:'Пароль',
+        passwordErrorMessage:'Длина пароля должна быть больше 6 сиволов'
+    },
+    ar:{
+        title:'مدخل',
+        enterButton: 'أدخل',
+        admin:'المشرف',
+        email:'البريد الالكتروني',
+        emailErrorMessage:'أدخل البريد الإلكتروني الصحيح',
+        password:'كلمة المرور',
+        passwordErrorMessage:'يجب أن تكون كلمة المرور أطول من 6 أحرف'
+    }
+})
 
 export const Login = ()=>{
     const isLog = useUserLogIn();
@@ -16,8 +37,8 @@ export const Login = ()=>{
     const [email, setEmail] = useState({
         value: '',
         type: 'email',
-        label: 'Email',
-        errorMessage: 'Введите корректный email',
+        label: strings.email,
+        errorMessage: strings.emailErrorMessage,
         valid: false,
         touched: false,
         validation: {
@@ -28,8 +49,8 @@ export const Login = ()=>{
     const [password, setPassword] = useState({
         value: '',
         type: 'password',
-        label: 'Пароль',
-        errorMessage: 'Длина пароля должна быть больше 6 сиволов',
+        label: strings.password,
+        errorMessage: strings.passwordErrorMessage,
         valid: false,
         touched: false,
         validation: {
@@ -138,16 +159,16 @@ export const Login = ()=>{
             <Header/>
             <div className={'Login'}>
                 <div className={'formContainer'}>
-                    <h1>Вход</h1>
+                    <h1>{strings.title}</h1>
                     <form onSubmit={(event)=>submitHandler}>
                         <div className={'login-box'}>
                             {renderInputs()}
                             <div className={'auth-btn'}>
                                 <Link to={'/'}>
-                                    <Button onClick={()=>1}>Войти</Button>
+                                    <Button onClick={()=>1}>{strings.enterButton}</Button>
                                 </Link>
                                 <Link to={'/admin'}>
-                                    <Button onClick={()=>1}>Админ</Button>
+                                    <Button onClick={()=>1}>{strings.admin}</Button>
                                 </Link>
                                 <Link to={'/'}>
 

@@ -7,6 +7,22 @@ import {Price} from "../Price/Price";
 import {Button} from "../../UI/Button/Button";
 import {useAddOrder, useOrder} from "../../Context/OrderContext";
 import {useUser} from "../../Context/UserContext/UserContext";
+import LocalizedStrings from "react-localization";
+let strings = new LocalizedStrings({
+
+    ru:{
+        cartTitle:'Ваша корзина',
+        emptyCart:'В вашей корзине ничего нет',
+        result:'Итого: ',
+        orderButton:'Заказать'
+    },
+    ar:{
+        cartTitle:'سلة التسوق الخاصة بك',
+        emptyCart:'لا يوجد شيء في سلتك',
+        result:'المجموع:',
+        orderButton:'لأجل'
+    }
+})
 export const CartList = () =>{
     const cart = useCart()
     const listCart = cart.slice(1)
@@ -41,9 +57,9 @@ export const CartList = () =>{
     }
     return(
         <React.Fragment>
-            <h1>Ваша корзина</h1>
+            <h1>{strings.cartTitle}</h1>
             {listCart.length===0
-                ?<div className={'emptyCart'}>В корзине ничего нет</div>
+                ?<div className={'emptyCart'}>{strings.emptyCart}</div>
                 :listCart.map((item,index)=>{
                     return (
                         <React.Fragment key={index}>
@@ -59,9 +75,9 @@ export const CartList = () =>{
             {listCart.length!==0
                 ?<div className={'Result'}>
                     <div className={'total-price'}>
-                        <span>Итого: </span> {calculateAllPrice()}
+                        <span>{strings.result} </span> {calculateAllPrice()}
                     </div>
-                    <Button onClick={makeOrder}>Заказать</Button>
+                    <Button onClick={makeOrder}>{strings.orderButton}</Button>
                 </div>
                 :null}
 

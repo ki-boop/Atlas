@@ -35,7 +35,7 @@ export const GmailAuth = () =>{
        })
         google.accounts.id.renderButton(
             document.getElementById('g-btn')!,
-            {theme: "outline", size:"large",type:"icon",shape:"pill"}
+            {theme: "outline", size:"large",type:"standard",shape:"pill"}
         )
 
     },[])

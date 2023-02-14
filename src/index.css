@@ -5,11 +5,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  direction: var(--direction);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+html[language='ar']{
+  --direction: rtl;
 }
 
 /*dark theme*/
@@ -25,6 +30,7 @@ html[data-theme='light']{
 
   --cart-list-border-bottom: 2px solid #eee;
   --cart-list-text-color: rgb(75, 91, 230);
+  --cart-list-label-text-color: #fff;
 
   --price-background: rgba(111,124,235,255);
   --price-color: white;
@@ -113,5 +119,6 @@ html[data-theme='dark']{
   --header-background: #171717;
 
   --sun-filter:brightness(0) invert(1) ;
+  --cart-list-label-text-color: #fff;
 
 }
