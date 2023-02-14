@@ -1,68 +1,72 @@
-
-.Field{
-display: flex;
+.Field {
+  display: flex;
   padding: 30px;
   border: var(--field-border);
   border-radius: 10px;
   flex-direction: column;
   align-items: center;
 
-  .forImage{
+  .forImage {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    .Button{
+
+    .Button {
       width: 250px;
       margin-top: 10px;
       font-size: 15px;
     }
-    img{
+
+    img {
       width: 300px;
     }
   }
-  form{
+  form {
     display: flex;
     width: 100%;
   }
-  .specifications{
+
+  .specifications {
     width: 100%;
-    h1{
+
+    h1 {
       margin: 0;
     }
 
-    .inputs{
+    .inputs {
       display: flex;
       justify-content: space-around;
 
-      .col{
+      .col {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: center;
         min-height: 250px;
 
-        .inputsTitle{
+        .inputsTitle {
           text-align: center;
           font-family: Belleza;
           font-weight: bold;
           font-size: 30px;
           color: var(--cart-list-h1-text-color);
           transition: color 400ms ease;
+        }
 
-          }
-        .block-input{
+        .block-input {
           width: 200px;
           height: 100px;
           display: flex;
           flex-direction: column;
           justify-content: space-between;
         }
-        .input-block{
 
+        .input-block {
           display: flex;
           justify-content: space-around;
-          label{
+
+          label {
             background: var(--field-label-background);
             color: var(--cart-list-label-text-color);
             padding: 2px;
@@ -72,23 +76,23 @@ display: flex;
             justify-content: center;
             font-size: 15px;
           }
-          input{
+
+          input {
             width: 165px;
             border-radius: 5px;
             border: var(--field-input-border);
-            &:active, &:focus{
+
+            &:active,
+            &:focus {
               outline: none;
             }
-            &:disabled{
+            
+            &:disabled {
               color: var(--field-input-disabled-text-color);
             }
-
           }
         }
       }
-
-
     }
   }
-
 }

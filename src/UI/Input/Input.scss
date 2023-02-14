@@ -1,31 +1,29 @@
-.Input{
+.Input {
   margin-bottom: 15px;
 
-}
-.Input label{
-  padding: 0;
-  display: block;
-  font-weight: bold;
+  label {
+    padding: 0;
+    display: block;
+    font-weight: bold;
+  }
+
+  input {
+    display: block;
+    box-sizing: border-box;
+    border: var(--input-border);
+    padding: 7px;
+    margin: 0 0 5px;
+    width: 100%;
+    outline: none;
+    transition: all 300ms ease-in-out;
+  }
+  
+  span {
+    color: var(--input-span-text-color);
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    top: 30px;
+  }
 }
 
-.Input input{
-  display: block;
-  box-sizing: border-box;
-  border:  var(--input-border);
-  padding: 7px;
-  margin: 0 0 5px;
-  width: 100%;
-  outline: none;
-  transition: all 300ms ease-in-out;
-}
-
-.Input span{
-  color: var(--input-span-text-color);
-  font-size: 12px;
-  font-weight: bold;
-  position: absolute;
-  top: 30px;
-}
-.Input.invalid{
-
-}

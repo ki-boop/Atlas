@@ -1,31 +1,25 @@
-.workspace{
+.workspace {
   transition: all 300ms ease-in-out;
   animation: active 400ms ease;
   opacity: 0;
   width: 95%;
   margin-left: auto;
   margin-right: auto;
-
 }
 
-.workspace-enter-done{
+.workspace-enter-done {
   height: 430px;
   opacity: 1;
 }
-.workspace-exit{
+.workspace-exit {
   height: 0px;
 }
 
 @keyframes active {
-  0%{
+  0% {
     height: 0px;
   }
-  100%{
+  100% {
     height: 430px;
   }
 }
-
-
-
-
-

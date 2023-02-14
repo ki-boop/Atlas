@@ -1,19 +1,15 @@
 body::-webkit-scrollbar {
   width: 7px;
 }
-.bogy{
+.bogy {
   transition: background-color 200ms linear;
 }
 
 body::-webkit-scrollbar-track {
-  background: #fff;        /* цвет зоны отслеживания */
+  background: #fff; 
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: rgb(113, 124, 228);    /* цвет бегунка */
-  border-radius: 20px;       /* округлось бегунка */
-  /* отступ вокруг бегунка */
+  background-color: rgb(113, 124, 228);
+  border-radius: 20px;
 }
-
-
-

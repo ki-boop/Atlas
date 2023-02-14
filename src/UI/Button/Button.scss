@@ -1,12 +1,13 @@
-.Button{
+.Button {
   box-sizing: border-box;
   background: var(--button-background);
   font-size: 18px;
   border: 0px;
-  color: var( --button-text-color);
+  color: var(--button-text-color);
   width: 120px;
   border-radius: 5px;
-  &:hover{
+  
+  &:hover {
     cursor: pointer;
   }
 }

@@ -1,4 +1,4 @@
-.Product{
+.Product {
   width: 300px;
   display: flex;
   flex-direction: column;
@@ -6,29 +6,31 @@
   border-radius: 5px;
   padding: 10px;
   animation: manifestation 2s ease;
-  .str{
+
+  .str {
     text-align: left;
     color: var(--product-str-color);
     transition: color 300ms ease;
-
   }
-  img{
+
+  img {
     width: 300px;
     height: 300px;
   }
-  .productProperty{
+
+  .productProperty {
     width: 80%;
     display: flex;
     flex-direction: column;
-
   }
-  .endMessage{
-    color:  var(--cart-list-h1-text-color);
+
+  .endMessage {
+    color: var(--cart-list-h1-text-color);
     transition: color 400ms ease;
   }
-
 }
-.makeOrder{
+
+.makeOrder {
   margin-top: 30px;
   width: 100%;
   display: flex;
@@ -37,12 +39,11 @@
 }
 
 @keyframes manifestation {
-  0%{
+  0% {
     transform: translateY(100px);
     opacity: 0;
-
   }
-  100%{
+  100% {
     transform: translateY(0px);
     opacity: 1;
   }

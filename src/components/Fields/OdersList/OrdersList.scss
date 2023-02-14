@@ -1,4 +1,4 @@
-.OrdersList{
+.OrdersList {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,35 +7,40 @@
   padding-top: 20px;
   padding-bottom: 20px;
   border-radius: 10px;
-  .order-item{
+
+  .order-item {
     display: flex;
     width: 90%;
     justify-content: space-between;
     align-items: center;
     color: var(--cart-list-h1-text-color);
-    div{
+
+    div {
       max-width: 245px;
     }
-    .items{
+
+    .items {
       border: var(--order-list-items-border);
       border-radius: 10px;
       margin-bottom: 5px;
-      .item{
+
+      .item {
         display: flex;
         padding: 5px;
-        .props{
+
+        .props {
           width: 100px;
           display: flex;
           align-items: center;
           justify-content: center;
         }
-        .Price{
+        
+        .Price {
           width: 100px;
           display: flex;
           justify-content: center;
         }
       }
     }
-
   }
 }

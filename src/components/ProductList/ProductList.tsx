@@ -1,41 +1,32 @@
-import React, {useEffect, useState} from "react";
 import Product from "../Product/Product";
-import './ProductList.scss'
-import LocalizedStrings from "react-localization";
-import {ProductsProvider, useAddProducts, useProducts} from "../../Context/ProductsContext";
+import "./ProductList.scss";
+import { useProducts } from "../../Context/ProductsContext";
 interface Product {
-    id:number,
-    count:number,
-    img:string[],
-    strings: Object
-}
-export const ProductList = () =>{
-
-    const products = useProducts()
-
-
-        return(
-
-            <div className={'ProductList'}>
-
-
-                {products.map((product, index) => {
-                    return(<Product id={product.id}
-                                    type={product.strings.type}
-                                    name={product.strings.name}
-                                    count={product.count}
-                                    description={product.strings.description}
-                                    price={product.strings.price}
-                                    img={product.img[0]}
-                                    key={index}/>);
-                    }
-                )}
-
-
-            </div>
-            )
+  id: number;
+  count: number;
+  img: string[];
+  strings: Object;
 }
 
+export const ProductList = () => {
+  const products = useProducts();
 
-
-
+  return (
+    <div className={"ProductList"}>
+      {products.map((product, index) => {
+        return (
+          <Product
+            id={product.id}
+            type={product.strings.type}
+            name={product.strings.name}
+            count={product.count}
+            description={product.strings.description}
+            price={product.strings.price}
+            img={product.img[0]}
+            key={index}
+          />
+        );
+      })}
+    </div>
+  );
+};

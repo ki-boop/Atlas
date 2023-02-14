@@ -1,10 +1,11 @@
-.Login{
+.Login {
   display: flex;
   justify-content: center;
   width: 100%;
   box-sizing: border-box;
   min-height: 1000px;
-  h1{
+
+  h1 {
     color: var(--cart-list-h1-text-color);
     margin: 0;
     margin-top: 5%;
@@ -17,19 +18,16 @@
   top: 50%;
   left: 50%;
   width: 400px;
-  padding: 60px  40px 40px;
+  padding: 60px 40px 40px;
   transform: translate(-50%, -50%);
   background: var(--login-background);
   box-sizing: border-box;
   box-shadow: var(--login-box-shadow);
   border-radius: 10px;
-
 }
-
 
 .login-box .user-box {
   position: relative;
-
 }
 
 .login-box .user-box input {
@@ -43,64 +41,49 @@
   outline: none;
   background: transparent;
 }
+
 .login-box .user-box label {
   position: absolute;
-  top:0;
+  top: 0;
   left: 5px;
   padding: -10px 0;
   font-size: 16px;
   color: var(--login-label-text-color);
   pointer-events: none;
-  transition: .5s;
+  transition: 0.5s;
 }
 
-.login-box .user-box input:focus ~label,
-.login-box .user-box input:valid  , .focused ~label{
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid,
+.focused ~ label {
   top: -20px !important;
   left: 0px !important;
   font-size: 16px !important;
 }
-.Button{
+
+.Button {
   display: block;
   width: 150px;
   font-size: 25px;
   text-decoration: none;
   transition: all 200ms ease-out;
-  &:hover{
-    box-shadow: var(--login--button-hover-box-shadow)
+
+  &:hover {
+    box-shadow: var(--login--button-hover-box-shadow);
   }
 }
-.auth-btn{
+
+.auth-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   gap: 20px;
-    > div{
-      border-radius: 5px !important;
-    }
-  a{
+  
+  > div {
+    border-radius: 5px !important;
+  }
+  a {
     text-decoration: none;
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

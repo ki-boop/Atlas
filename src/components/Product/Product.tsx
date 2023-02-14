@@ -1,4 +1,3 @@
-import React, {useEffect, useState} from "react";
 import './Product.scss'
 import '../../assets/images/itemsImage/default.png'
 import {Price} from "../Price/Price";
@@ -19,10 +18,8 @@ interface ProductProps{
     price:number,
     img:string
 }
+
 const Product = (props:ProductProps )=>{
-    const initState =1;
-    const cart = useCart();
-    const product = useProducts()
     const changeProduct = useChangeProducts()
     const addToCartContext = useAddToCart()
     const countItems = useCountItem()

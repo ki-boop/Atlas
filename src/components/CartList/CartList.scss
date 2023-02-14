@@ -1,26 +1,28 @@
-.CartList{
+.CartList {
   display: flex;
   width: 100%;
   justify-content: space-around;
   margin-top: 40px;
   border-bottom: var(--cart-list-border-bottom);
   padding-bottom: 40px;
-
 }
-h1{
+
+h1 {
   text-align: center;
   font-family: Belleza;
   font-size: 40px;
   color: var(--cart-list-h1-text-color);
 }
-.emptyCart{
+
+.emptyCart {
   text-align: center;
   font-family: Belleza;
   font-size: 40px;
   font-weight: bold;
   color: var(--cart-list-text-color);
 }
-.Result{
+
+.Result {
   width: 80%;
   font-family: Belleza;
   font-weight: bold;
@@ -30,14 +32,15 @@ h1{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  .total-price{
+
+  .total-price {
     width: 13%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    span{
+    
+    span {
       color: var(--cart-list-h1-text-color);
-
     }
   }
 }

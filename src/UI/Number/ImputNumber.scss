@@ -1,9 +1,10 @@
-.InputNumber{
+.InputNumber {
   display: flex;
   position: relative;
   width: 100px;
 }
-.inputCountItems{
+
+.inputCountItems {
   cursor: default;
   display: block;
   height: 32px;
@@ -19,17 +20,18 @@
   appearance: textfield;
   border: 0;
   transition: background 500ms ease;
-  background: var( --product-input-inputCountItems-background);
+  background: var(--product-input-inputCountItems-background);
   color: var(--product-input-inputCountItems-color);
 
-
-  &:active,&:hover, &:focus{
+  &:active,
+  &:hover,
+  &:focus {
     outline: 0;
     outline-offset: 0;
   }
-
 }
-.btn{
+
+.btn {
   position: absolute;
   top: 1px;
   bottom: 1px;
@@ -44,18 +46,22 @@
   transition: all 300ms ease;
   background: var(--product-input-number-btn-background);
 
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
-
 }
-.btn-plus{right: 1px;
-  &:active{
-    box-shadow:var(--product-input-number-btn-plus-active);
-  }}
-.btn-min{left: 1px;
-  &:active{
-    box-shadow: var( --product-input-number-btn-min-active);
 
+.btn-plus {
+  right: 1px;
+
+  &:active {
+    box-shadow: var(--product-input-number-btn-plus-active);
+  }
+}
+.btn-min {
+  
+  left: 1px;
+  &:active {
+    box-shadow: var(--product-input-number-btn-min-active);
   }
 }

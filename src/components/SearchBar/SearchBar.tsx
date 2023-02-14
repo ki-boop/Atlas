@@ -1,12 +1,10 @@
-import React from "react";
 
-export const SearchBar= ()=>{
+export const SearchBar = () => {
+  const onSearchHandler = () => {};
 
-    const onSearchHandler= ()=>{
-
-    }
-
-return <div className={'SearchBar'}>
-    <input type={'search'} onChange={onSearchHandler}/>
-</div>
-}
+  return (
+    <div className={"SearchBar"}>
+      <input type={"search"} onChange={onSearchHandler} />
+    </div>
+  );
+};

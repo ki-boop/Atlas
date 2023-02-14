@@ -1,10 +1,11 @@
-.Account{
+.Account {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   flex-grow: 1;
-  .container{
+
+  .container {
     margin-top: 5%;
     width: 80%;
     box-sizing: border-box;
@@ -16,60 +17,67 @@
     font-family: Belleza;
     padding: 20px;
 
-
-    .button-containers{
+    .button-containers {
       width: 100%;
       display: flex;
       justify-content: center;
     }
 
-    .Title{
+    .Title {
       width: fit-content;
       text-align: center;
       font-size: 50px;
       border-bottom: var(--account-border-bottom);
     }
-    .user-info{
+    .user-info {
       width: 100%;
       display: flex;
       justify-content: space-around;
       margin-top: 20px;
-      .user-photo{
+
+      .user-photo {
         display: flex;
         align-items: center;
         width: 100%;
         justify-content: center;
-        img{
+
+        img {
           border-radius: 10px;
         }
       }
-      .user-property{
+
+      .user-property {
         width: 100%;
         letter-spacing: 3px;
-        h2{
+
+        h2 {
           padding: 0;
           margin: 0;
           font-size: 35px;
           border-bottom: var(--account-border-bottom);
           width: fit-content;
         }
-        ul{
+
+        ul {
           list-style: none;
           padding-left: 5px;
 
-          li{
+          li {
             padding-top: 10px;
             font-size: 25px;
           }
         }
-        .OrdersList{
+
+        .OrdersList {
           border: 0px;
           align-items: center;
-          .order-item{
+
+          .order-item {
             width: 100%;
             margin-left: -100px;
             margin-bottom: 5px;
-            .for-price{
+            
+            .for-price {
               padding: 5px;
             }
           }

@@ -1,61 +1,62 @@
-html{
+html {
   overflow-x: hidden;
 }
-.Greeting{
-    position: absolute;
-    top:9%;
+
+.Greeting {
+  position: absolute;
+  top: 9%;
   z-index: 0;
   background: var(--greeting-background);
-    width: 300px;
+  width: 300px;
   height: 60px;
 
-    border-radius: 5px;
+  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  .close{
+  .close {
     position: absolute;
     top: 5px;
     right: 10px;
     opacity: 0.7;
-    &:hover{
+    &:hover {
       cursor: pointer;
       opacity: 1;
     }
   }
 
-  .Title{
-    width: 70%
+  .Title {
+    width: 70%;
   }
 }
 
-
-.appear{
+.appear {
   animation: greetingAppear 2000ms ease forwards;
   right: 100px;
 }
-.disappear{
+
+.disappear {
   animation: greetingDisappear 2000ms ease forwards;
   right: 100px;
 }
-
 
 @keyframes greetingAppear {
   0% {
     transform: translateX(200px);
   }
-  100%{
+  100% {
     transform: translateX(0px);
   }
 }
+
 @keyframes greetingDisappear {
   from {
     transform: translateX(0px);
     opacity: 1;
     display: block;
   }
-  to{
+  to {
     transform: translateX(400px);
     opacity: 0;
     display: none;
